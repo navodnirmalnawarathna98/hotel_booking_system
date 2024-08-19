@@ -34,14 +34,15 @@ export default function HeaderOne({ variant }) {
                             <ul className="mobile__menu" style={{ display: `${mobileToggle ? "block" : "none"}` }}>
 								
                                 <li><Link href="/">Home</Link></li>
-
+{/* 
 								<li className="menu-item-has-children"><a href="#">About</a>
                                     <DropDown />
                                     <ul className="sub-menu">
                                         <Page />
                                     </ul>                                    
-								</li>
+								</li> */}
 								
+                                <li><Link href="/about">About</Link></li>
                                 <li><Link href="/room-style">Rooms</Link></li>
 
 								<li><Link href="/contact">Contact</Link></li>
