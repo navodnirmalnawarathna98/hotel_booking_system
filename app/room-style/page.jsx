@@ -36,7 +36,8 @@ const Roomstyle = () => {
                           </Link>
                         </div>
                         <div className="deluxe__two-item-content">
-                          <span>${item.price}/Night</span>
+                          <span>Rs.{item.price1}/AC-with breakfast</span>
+                          <span>Rs.{item.price2}/Non-AC-with breakfast</span>
                           <h4>
                             <Link href="/room-details">{item.title}</Link>
                           </h4>
