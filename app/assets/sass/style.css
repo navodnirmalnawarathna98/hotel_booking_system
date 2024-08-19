@@ -5080,8 +5080,19 @@ Deluxe Two
   padding: 6px 15px;
   position: absolute;
   left: 20px;
-  top: -55px;
+  width: 250px;
 }
+
+/* Specific styles for the first price */
+.deluxe__two-item-content > span:first-child {
+  top: -55px; /* Position for the first price */
+}
+
+/* Specific styles for the second price */
+.deluxe__two-item-content > span:nth-child(2) {
+  top: -20px; /* Adjust this value to prevent overlap */
+}
+
 .deluxe__two-item-content-meta ul {
   padding: 0;
   margin: 0;

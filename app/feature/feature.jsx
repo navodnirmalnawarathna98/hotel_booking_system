@@ -11,7 +11,7 @@ export default function Feature() {
             <div className="feature__area-image">
               <Image
                 alt=""
-                src="/img/features/feature-1.jpg"
+                src="/img/dine.jpg"
                 width={600}
                 height={600}
               />

@@ -12,13 +12,8 @@ const roomFilter = {
     },
     {
       id: 3,
-      name: "Single",
-      filterData: "single",
-    },
-    {
-      id: 4,
-      name: "Small Suite",
-      filterData: "suite",
+      name: "Double",
+      filterData: "double",
     },
     {
       id: 5,
@@ -27,46 +22,31 @@ const roomFilter = {
     },
   ],
   projects: [
-    {
+    { 
       id: 1,
-      image: "/img/luxury/luxury-1.jpg",
-      title: "Small Suite",
+      image: "/img/hotel/rooms/room1/room1_1.jpeg",
+      title: "Luxury",
       price: "134",
       class_s: "col-xl-3 col-lg-4 mt-30",
-      filter: ["suite"],
+      filter: ["luxury"],
     },
     {
       id: 2,
-      image: "/img/luxury/luxury-2.jpg",
-      title: "Deluxe Room",
+      image: "/img/hotel/rooms/room5/room5_3.jpeg",
+      title: "Double",
       price: "199",
       class_s: "col-xl-6 col-lg-8 mt-30",
-      filter: ["suite"],
+      filter: ["double"],
     },
     {
       id: 3,
-      image: "/img/luxury/luxury-3.jpg",
+      image: "/img/hotel/rooms/room4/room4_1.jpeg",
       title: "Family Room",
       price: "319",
       class_s: "col-xl-3 col-lg-4 mt-30",
       filter: ["family"],
-    },
-    {
-      id: 4,
-      image: "/img/luxury/luxury-4.jpg",
-      title: "Single Room",
-      price: "169",
-      class_s: "col-xl-6 col-lg-8 mt-30",
-      filter: ["single"],
-    },
-    {
-      id: 5,
-      image: "/img/luxury/luxury-5.jpg",
-      title: "Luxury Room",
-      price: "249",
-      class_s: "col-xl-6 mt-30",
-      filter: ["luxury"],
-    },
+    }
+
   ],
 };
 
