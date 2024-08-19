@@ -32,30 +32,18 @@ export default function HeaderOne({ variant }) {
 					<div className="header__area-menubar-right">
 						<div className="header__area-menubar-right-menu menu-responsive">
                             <ul className="mobile__menu" style={{ display: `${mobileToggle ? "block" : "none"}` }}>
-								<li className="menu-item-has-children"><a href="#">Home</a>
-                                    <DropDown />
-                                    <ul className="sub-menu">
-                                        <Home />
-                                    </ul>                                    
-								</li>
-								<li className="menu-item-has-children"><a href="#">Pages</a>
+								
+                                <li><Link href="/">Home</Link></li>
+
+								<li className="menu-item-has-children"><a href="#">About</a>
                                     <DropDown />
                                     <ul className="sub-menu">
                                         <Page />
                                     </ul>                                    
 								</li>
-								<li className="menu-item-has-children"><a href="#">Room</a>
-                                    <DropDown />
-                                    <ul className="sub-menu">
-                                        <Room />
-                                    </ul>                                    
-								</li>
-								<li className="menu-item-has-children"><a href="#">Blog</a>
-                                    <DropDown />
-                                    <ul className="sub-menu">
-                                        <Blog />
-                                    </ul>                                    
-								</li>
+								
+                                <li><Link href="/room-style">Rooms</Link></li>
+
 								<li><Link href="/contact">Contact</Link></li>
 							</ul>
 						</div>

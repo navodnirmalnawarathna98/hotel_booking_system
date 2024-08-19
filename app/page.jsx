@@ -22,8 +22,8 @@ export default function Home() {
         <Videoarea />
         <Services />
         <Feature />
-        <Testimonial />
-        <Blog />
+        {/* <Testimonial /> */}
+        {/* <Blog /> */}
         <Footer />
         <ScrollToTopButton />
     </>
