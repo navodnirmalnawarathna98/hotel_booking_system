@@ -12,7 +12,7 @@ const Servicedetails = () => {
     <>
       <SEO pageTitle="Services Details" />
         <HeaderOne />
-        <BreadCrumb title="Services Details" innerTitle="Services Details" bgImage="/img/banner/page-banner-1.jpg"/>
+        <BreadCrumb title="Services Details" innerTitle="Services Details" bgImage="/img/hotel/rooms/room3/room3_1.jpeg"/>
         <ServicesDetails />
         <Footer />
         <ScrollToTopButton />

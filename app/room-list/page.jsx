@@ -10,7 +10,7 @@ const Roomlist = () => {
     <>
       <SEO pageTitle='Room List' />
         <HeaderOne />
-        <BreadCrumb title='Room List' innerTitle='Room List' bgImage='/img/banner/page-banner-7.jpg' />
+        <BreadCrumb title='Room List' innerTitle='Room List' bgImage='img/hotel/rooms/room1/room1-2.jpeg' />
         <Roomlistblogs />
         <Footer />
         <ScrollToTopButton />

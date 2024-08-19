@@ -15,8 +15,8 @@ export default function Services() {
                   Room Cleaning
                 </h5>
                 <p>
-                  Proin massa augue, lacinia at blandit ac, fringilla
-                  scelerisque tortor
+                Enjoy daily room cleaning services to ensure your stay is comfortable and spotless.
+
                 </p>
               </div>
             </div>
@@ -31,8 +31,8 @@ export default function Services() {
                   Room Wifi
                 </h5>
                 <p>
-                  Proin massa augue, lacinia at blandit ac, fringilla
-                  scelerisque tortor
+                Stay connected with our high-speed Wi-Fi available in all rooms for your convenience.
+
                 </p>
               </div>
             </div>
@@ -47,8 +47,8 @@ export default function Services() {
                   Pickup & Drop
                 </h5>
                 <p>
-                  Proin massa augue, lacinia at blandit ac, fringilla
-                  scelerisque tortor
+                We offer convenient pick-up and drop-off services to make your travel hassle-free.
+
                 </p>
               </div>
             </div>

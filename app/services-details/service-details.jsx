@@ -54,7 +54,7 @@ const ServicesDetails = () => {
               </div>
               <div
                 className="all__sidebar-item-help mt-30"
-                style={{ backgroundImage: `url('/img/hotel/hotel-9.jpg')` }}
+                style={{ backgroundImage: `url('img/hotel/rooms/room3/room3_1.jpeg')` }}
               >
                 <div className="all__sidebar-item-help-icon">
                   <i className="fal fa-phone-alt"></i>
@@ -74,7 +74,7 @@ const ServicesDetails = () => {
           <div className="col-xxl-9 col-xl-8 col-lg-8">
             <div className="services__details-left">
               <div className="services__details-left-image mb-30">
-                <img src="/img/luxury/luxury-5.jpg" alt="" />
+                <img src="img/hotel/rooms/room3/room3_1.jpeg" alt="" />
               </div>
               <div className="services__details-left-content">
                 <h2 className="mb-30">Luxury Room</h2>
@@ -106,7 +106,7 @@ const ServicesDetails = () => {
                   <div className="col-xl-6 col-lg-12 xl-mb-30">
                     <img
                       className="img__full"
-                      src="/img/hotel/hotel-24.jpg"
+                      src="img/hotel/rooms/room3/room3_1.jpeg"
                       alt=""
                     />
                   </div>

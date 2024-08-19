@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Offers from "../../public/img/features/offers.jpg";
+import Offers from "../../public/img/hotel/rooms/room3/room3_1.jpeg";
 
 const Offerarea = () => {
   return (
@@ -10,15 +10,11 @@ const Offerarea = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="offers__area-title">
-                <span className="subtitle__one">Company Offers</span>
-                <h2>Book now and save up to 35% On hotel rooms</h2>
+                <span className="subtitle__one">About Us</span>
+                <h2>Who We Are</h2>
                 <p>
-                  hasellus nisi sapien, rutrum placerat sapien eu, rhoncus
-                  tempus felis. Nulla non pulvinar enim, vel viverra nunc.
-                  Integer condimentum vulputate justo. Morbi rhoncus elit in
-                  tellus viverra, vel fermentum orci dictum. Vestibulum non nisi
-                  commodo, tincidunt elit non, consectetur tellus. Fusce in
-                  commodo velit. In dapibus dui vitae tortor ullamcorper mollis.
+                Nestled in the heart of Dambulla, IMA - Rangiri View Resort offers a serene escape surrounded by lush greenery and breathtaking views of the Rangiri Dambulla Rock. Our resort is designed to provide guests with an authentic Sri Lankan experience, combining modern comforts with traditional hospitality. Whether you are here to explore the ancient cultural sites, relax in the peaceful ambiance, or enjoy our world-class amenities, Rangiri View Resort is your perfect getaway. Our commitment to excellence ensures that every stay is memorable, making us the ideal choice for travelers seeking tranquility and adventure in equal measure.
+
                 </p>
               </div>
             </div>
@@ -26,7 +22,7 @@ const Offerarea = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="offers__area-image">
-                <Image alt="" layout="responsive" src={Offers} />
+                <Image alt="" layout="responsive" objectFit="cover" src={Offers} height={50} style={{ height: '50px'}}/>
               </div>
             </div>
           </div>

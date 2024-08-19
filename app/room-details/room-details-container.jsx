@@ -60,16 +60,16 @@ const Roomdetailscontainer = () => {
                   </p>
                   <div className="row mt-35 mb-35">
                     <div className="col-sm-6 sm-mb-30">
-                      <img
+                      <img 
                         className="img__full"
-                        src="/img/hotel/hotel-24.jpg"
+                        src="img/hotel/rooms/room1/room1_1.jpeg"
                         alt=""
                       />
                     </div>
                     <div className="col-sm-6">
                       <img
                         className="img__full"
-                        src="/img/hotel/hotel-25.jpg"
+                        src="img/hotel/rooms/room1/room1-3.jpeg"
                         alt=""
                       />
                     </div>

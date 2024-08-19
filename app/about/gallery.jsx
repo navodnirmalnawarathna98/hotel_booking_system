@@ -2,10 +2,10 @@
 
 const galleryData = {
   galleryImage: [
-    { image: "/img/features/gallery-1.jpg" },
-    { image: "/img/features/gallery-2.jpg" },
-    { image: "/img/features/gallery-3.jpg" },
-    { image: "/img/features/gallery-4.jpg" },
+    { image: "img/hotel/rooms/room4/room4_1.jpeg" },
+    { image: "img/hotel/rooms/room5/room5-1.jpeg" },
+    { image: "img/hotel/rooms/room2/room2_1.jpeg" },
+    { image: "img/hotel/rooms/room1/room1_1.jpeg" },
   ],
 };
 
@@ -24,7 +24,8 @@ const Gallery = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> 
+          <br />
         </div>
       </div>
     </>
