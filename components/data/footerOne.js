@@ -1,5 +1,5 @@
 const footerOne = {
-    logo: '/assets/img/logo-9.png',
+    logo: '/assets/img/logo.png',
     title_1: 'About Us',
     description: 'Subscribe to out newsletter today to receive updates on the latest news, releases and special offers respect your privacy.',
     title_2: 'Other Pages',
@@ -10,11 +10,13 @@ const footerOne = {
     ],
     title_3: 'Gallery',
     title_4: 'Office Info',
-    office_des: '1234 Lake Tahoe Blvd, South Lake Tahoe , California USA',
+    office_des: 'Rathmalghaela Road, Temple Junction',
     officeInfos: [
-        {link:'https://www.google.com/maps',info:'GXF4+8HQ Chippenham United Kingdom',icon: <i className="fal fa-map-marked-alt"></i>},
-        {link:'mailto:info.help@gmail.com',info:'info.help@gmail.com',icon: <i className="fal fal fa-envelope-open-text"></i>},
-        {link:'tel:+125(895)658568',info:'+125 (895) 658 568',icon: <i className='fal fa-phone-alt'></i>}
+        {link:'https://www.google.com/maps',info:'Rathmalghaela Road, Temple Junction, Dambulla',icon: <i className="fal fa-map-marked-alt"></i>},
+        {link:'mailto:rangiriviewresort@gmail.com',info:'rangiriviewresort@gmail.com',icon: <i className="fal fal fa-envelope-open-text"></i>},
+        {link:'tel:+94(76) 170 6172',info:'+94(76) 170 6172',icon: <i className='fal fa-phone-alt'></i>},
+        {link:'tel:+94(76) 733 6176',info:'+94(76) 733 6176',icon: <i className='fal fa-phone-alt'></i>}
+     
     ],
   }
 

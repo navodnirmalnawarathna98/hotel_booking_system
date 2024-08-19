@@ -46,8 +46,8 @@ export default function Footer() {
                 </div>
                 {/* Company description */}
                 <p>
-                  Phasellus nisi sapien, rutrum placerat sapien eu, rhoncus
-                  tempus
+                Book hotel rooms & get deals For the Best Price
+
                 </p>
                 <div className="footer__area-widget-about-social">
                   <Social />
@@ -123,7 +123,7 @@ export default function Footer() {
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-6 col-md-7 md-mb-10">
               <div className="copyright__area-left md-t-center">
-                  <p>Copyright © 2023<a href="https://themeforest.net/user/themeori/portfolio"> ThemeOri</a> Website by<Link href="/"> Hostily</Link></p>
+                  <p>Copyright © 2023<a href="https://themeforest.net/user/themeori/portfolio"> ThemeOri</a> Website by<Link href="/"> IMA</Link></p>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-5">

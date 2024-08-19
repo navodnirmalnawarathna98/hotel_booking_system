@@ -1,5 +1,5 @@
 {
-  "name": "hostily",
+  "name": "IMA",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,7 +18,7 @@
     "dashui-free-nextjs-admin-template": "file:",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
-    "hostily": "file:",
+    "IMA": "file:",
     "instead": "^1.0.3",
     "next": "13.4.9",
     "next-seo": "^5.15.0",

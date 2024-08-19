@@ -23,7 +23,8 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 									</div>
 									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
 										<span>Call Now</span>
-										<h6><Link href="tel:+125(895)658568">+125 (895) 658 568</Link></h6>
+										<h6><Link href="tel:+94(76) 170 6172">+94(76) 170 6172</Link></h6>
+										<h6><Link href="tel:+94(76) 733 6176">+94(76) 733 6176</Link></h6>
 									</div>
 								</div>
 								<div className="header__area-menubar-right-box-sidebar-popup-contact-item">
@@ -32,7 +33,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 									</div>
 									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
 										<span>Quick Email</span>
-										<h6><Link href="mailto:info.help@gmail.com">info.help@gmail.com</Link></h6>
+										<h6><Link href="mailto:rangiriviewresort@gmail.com">rangiriviewresort@gmail.com</Link></h6>
 									</div>
 								</div>
 								<div className="header__area-menubar-right-box-sidebar-popup-contact-item">
@@ -41,7 +42,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 									</div>
 									<div className="header__area-menubar-right-box-sidebar-popup-contact-item-content">
 										<span>Office Address</span>
-										<h6><Link href="https://www.google.com/maps">PV3M+X68 Welshpool United Kingdom</Link></h6>
+										<h6><Link href="https://www.google.com/maps">Rathmalghaela Road, Temple Junction, Dambulla</Link></h6>
 									</div>
 								</div>
 							</div>

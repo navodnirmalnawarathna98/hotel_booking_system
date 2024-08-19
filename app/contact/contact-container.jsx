@@ -10,8 +10,7 @@ const Contactcontainer = () => {
               <div className="contact__area-title">
                 <h3 className="mb-25">Get In Touch</h3>
                 <p>
-                  Phasellus nisi sapien, rutrum placerat sapien eu, rhoncus
-                  tempus felis. Nulla non pulvinar enim, vel viverra nunc
+                Book hotel rooms & get deals For the Best Price
                 </p>
               </div>
               <div className="contact__area-info">
@@ -22,7 +21,9 @@ const Contactcontainer = () => {
                   <div className="contact__area-info-item-content">
                     <span>Emergency Help</span>
                     <h6>
-                      <a href="tel:+123(458)896895">+123 ( 458 ) 896 895</a>
+                      <a href="tel:+94(76) 170 6172">+94(76) 170 6172</a>
+                      <br/>
+                      <a href="tel:+94(76) 170 6172">+94(76) 733 6176</a>
                     </h6>
                   </div>
                 </div>
@@ -33,7 +34,7 @@ const Contactcontainer = () => {
                   <div className="contact__area-info-item-content">
                     <span>Quick Email</span>
                     <h6>
-                      <a href="mailto:support@gamil.com">support@gamil.com</a>
+                      <a href="mailto:rangiriviewresort@gmail.com">rangiriviewresort@gmail.com</a>
                     </h6>
                   </div>
                 </div>
@@ -42,9 +43,9 @@ const Contactcontainer = () => {
                     <i className="fal fa-map-marker-alt"></i>
                   </div>
                   <div className="contact__area-info-item-content">
-                    <span>Office Address</span>
+                    <span>Address</span>
                     <h6>
-                      <a href="#">GXF4+8HQ Chippenham United Kingdom </a>
+                      <a href="#">Rathmalghaela Road, Temple Junction, Dambulla </a>
                     </h6>
                   </div>
                 </div>
