@@ -29,20 +29,12 @@ export default function Footer() {
     <div className="footer__area">
       <div className="container">
         <div className="row flex justify-between">
-          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 sm-mb-30">
+          <div className="col-xl-5 col-lg-5 col-md-6 col-sm-6 sm-mb-30">
             <div className="footer__area-widget">
               <div className="footer__area-widget-about">
                 <div className="footer__area-widget-about-logo">
                   {/* Company logo */}
-                  <Link href="/">
-                    <Image
-                      layout="responsive"
-                      src="/logo.png"
-                      alt=""
-                      width={200}
-                      height={50}
-                    />
-                  </Link>
+                  <Link href="/"><img src="/logo.png" alt="logo" /></Link>
                 </div>
                 {/* Company description */}
                 <p>
@@ -55,7 +47,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 lg-mb-30">
+          <div className="col-xl-5 col-lg-5 col-md-6 col-sm-6 lg-mb-30">
             <div className="footer__area-widget">
               {/* Contact information */}
               <h5>Information</h5>
@@ -95,27 +87,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-lg-4 col-md-7 col-sm-8">
-            <div className="footer__area-widget">
-              {/* Subscription form */}
-              <h5>Subscribe</h5>
-              <div className="footer__area-widget-subscribe">
-                <form action="#">
-                  {/* Email input */}
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Email Address"
-                    
-                  />
-                  {/* Submit button */}
-                  <button type="submit">
-                    <i className="fal fa-hand-pointer"></i>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
+       
         </div>
       </div>
       <div className="copyright__area">
@@ -123,7 +95,7 @@ export default function Footer() {
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-6 col-md-7 md-mb-10">
               <div className="copyright__area-left md-t-center">
-                  <p>Copyright © 2023<a href="https://themeforest.net/user/themeori/portfolio"> ThemeOri</a> Website by<Link href="/"> IMA</Link></p>
+                  <p>Copyright © 2024 Website by<Link href="/"> IMA</Link></p>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-5">
