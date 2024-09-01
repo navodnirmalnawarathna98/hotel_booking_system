@@ -2,10 +2,8 @@
 
 import { Fragment } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Link from 'next/link';
 import ProjectsStatsData from "data/dashboard/ProjectsStatsData";
 import { StatRightTopIcon } from "widgets";
-
 
 const Dash = () => {
   return (
