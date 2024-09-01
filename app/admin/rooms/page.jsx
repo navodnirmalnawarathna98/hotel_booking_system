@@ -73,6 +73,15 @@ const Rooms = () => {
                         <th scope="col">#</th>
                         <th scope="col">Room Number</th>
                         <th scope="col">Room Type</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">AC Type</th>
+                        <th scope="col">Short Description</th>
+                        <th scope="col">Long Description</th>
+                        <th scope="col">Bed Count</th>
+                        <th scope="col">Guest Count</th>
+                        <th scope="col">Main Image</th>
+                        <th scope="col">Images</th>
+                        <th scope="col">Amenities</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -82,6 +91,21 @@ const Rooms = () => {
                             <th scope="row">{index + 1}</th>
                             <td>{room.roomNumber}</td>
                             <td>{room.roomType}</td>
+                            <td>{room.price}</td>
+                            <td>{room.acType}</td>
+                            <td>{room.smallDesc}</td>
+                            <td>{room.longDesc}</td>
+                            <td>{room.bedCount}</td>
+                            <td>{room.guestCount}</td>
+                            <td>
+                                <img src={room.mainImage} alt="Main" style={{ width: "100px", height: "auto" }} />
+                            </td>
+                            <td>
+                                {room.images.map((image, i) => (
+                                    <img key={i} src={image} alt={`Image ${i + 1}`} style={{ width: "50px", height: "auto", margin: "5px" }} />
+                                ))}
+                            </td>
+                            <td>{room.amenities.join(", ")}</td>
                             <td>
                                 <Button 
                                     variant="warning" 

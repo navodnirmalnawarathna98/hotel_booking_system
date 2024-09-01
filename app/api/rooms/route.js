@@ -7,8 +7,34 @@ export async function POST(req) {
   await connectDB();
 
   try {
-    const { roomNumber, roomType } = await req.json();
-    const newRoom = new Room({ roomNumber, roomType });
+    const { 
+      roomNumber, 
+      roomType, 
+      price, 
+      acType, 
+      smallDesc, 
+      longDesc, 
+      bedCount, 
+      guestCount, 
+      mainImage, 
+      images, 
+      amenities 
+    } = await req.json();
+
+    const newRoom = new Room({ 
+      roomNumber, 
+      roomType, 
+      price, 
+      acType, 
+      smallDesc, 
+      longDesc, 
+      bedCount, 
+      guestCount, 
+      mainImage, 
+      images, 
+      amenities 
+    });
+
     await newRoom.save();
     return NextResponse.json({ message: 'Room added successfully', room: newRoom });
   } catch (error) {
@@ -26,6 +52,7 @@ export async function GET() {
     return NextResponse.json({ message: 'Error fetching rooms', error: error.message }, { status: 500 });
   }
 }
+
 export async function PUT(req) {
   await connectDB();
 
@@ -33,20 +60,49 @@ export async function PUT(req) {
   const roomId = searchParams.get('id');
 
   if (!roomId) {
-      return NextResponse.json({ message: 'Room ID not provided' }, { status: 400 });
+    return NextResponse.json({ message: 'Room ID not provided' }, { status: 400 });
   }
 
   try {
-      const { roomNumber, roomType } = await req.json();
-      const updatedRoom = await Room.findByIdAndUpdate(roomId, { roomNumber, roomType }, { new: true });
+    const { 
+      roomNumber, 
+      roomType, 
+      price, 
+      acType, 
+      smallDesc, 
+      longDesc, 
+      bedCount, 
+      guestCount, 
+      mainImage, 
+      images, 
+      amenities 
+    } = await req.json();
 
-      if (!updatedRoom) {
-          return NextResponse.json({ message: 'Room not found' }, { status: 404 });
-      }
+    const updatedRoom = await Room.findByIdAndUpdate(
+      roomId, 
+      { 
+        roomNumber, 
+        roomType, 
+        price, 
+        acType, 
+        smallDesc, 
+        longDesc, 
+        bedCount, 
+        guestCount, 
+        mainImage, 
+        images, 
+        amenities 
+      }, 
+      { new: true }
+    );
 
-      return NextResponse.json({ message: 'Room updated successfully', room: updatedRoom });
+    if (!updatedRoom) {
+      return NextResponse.json({ message: 'Room not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Room updated successfully', room: updatedRoom });
   } catch (error) {
-      return NextResponse.json({ message: 'Error updating room', error: error.message }, { status: 500 });
+    return NextResponse.json({ message: 'Error updating room', error: error.message }, { status: 500 });
   }
 }
 
@@ -57,18 +113,18 @@ export async function DELETE(req) {
   const roomId = searchParams.get('id');
 
   if (!roomId) {
-      return NextResponse.json({ message: 'Room ID not provided' }, { status: 400 });
+    return NextResponse.json({ message: 'Room ID not provided' }, { status: 400 });
   }
 
   try {
-      const deletedRoom = await Room.findByIdAndDelete(roomId);
+    const deletedRoom = await Room.findByIdAndDelete(roomId);
 
-      if (!deletedRoom) {
-          return NextResponse.json({ message: 'Room not found' }, { status: 404 });
-      }
+    if (!deletedRoom) {
+      return NextResponse.json({ message: 'Room not found' }, { status: 404 });
+    }
 
-      return NextResponse.json({ message: 'Room deleted successfully' });
+    return NextResponse.json({ message: 'Room deleted successfully' });
   } catch (error) {
-      return NextResponse.json({ message: 'Error deleting room', error: error.message }, { status: 500 });
+    return NextResponse.json({ message: 'Error deleting room', error: error.message }, { status: 500 });
   }
 }
