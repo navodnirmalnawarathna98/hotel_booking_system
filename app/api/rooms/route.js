@@ -2,14 +2,51 @@
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/connect-db";
 import Room from "@/models/Room";
+import multer from "multer";
+
+// Configure multer for file uploads
+const storage = multer.memoryStorage(); // Store images in memory as buffer
+const upload = multer({ storage });
 
 export async function POST(req) {
-  await connectDB();
-
   try {
-    const { roomNumber, roomType } = await req.json();
-    const newRoom = new Room({ roomNumber, roomType });
+    await connectDB();
+
+    // Parse the incoming request body
+    const body = await req.json();
+
+    const {
+      roomNumber,
+      roomType,
+      price,
+      acType,
+      smallDesc,
+      longDesc,
+      bedCount,
+      guestCount,
+      mainImage,
+      images,
+      amenities,
+    } = body;
+
+    // Create new Room with the parsed data
+    const newRoom = new Room({
+      roomNumber,
+      roomType,
+      price,
+      acType,
+      smallDesc,
+      longDesc,
+      bedCount,
+      guestCount,
+      mainImage,
+      images,
+      amenities,
+    });
+
+    // Save the room to the database
     await newRoom.save();
+
     return NextResponse.json({
       message: "Room added successfully",
       room: newRoom,
@@ -35,6 +72,7 @@ export async function GET() {
     );
   }
 }
+
 export async function PUT(req) {
   await connectDB();
 
