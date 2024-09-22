@@ -1,20 +1,28 @@
 "use client";
 
+import './signup.css';
 import React, { useState } from 'react';
-import { Container, Nav, Tab, Button, Form, Row, Col } from 'react-bootstrap';
+import { Container, Tab, Nav, Button, Form, Row, Col } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaGoogle, FaGithub } from 'react-icons/fa';
 
-function page() {
+const page = () => {
   const [activeTab, setActiveTab] = useState('login');
 
-  const handleSelect = (eventKey) => {
-    setActiveTab(eventKey);
+  const handleSelect = (key) => {
+    setActiveTab(key);
   };
 
   return (
-    <Container className="p-3 my-5 d-flex flex-column w-50">
+    <Container
+      className="p-3 my-5 d-flex flex-column"
+      style={{
+        minHeight: '90vh',
+        justifyContent: 'center', // Center vertically
+        alignItems: 'center', // Center horizontally
+      }}
+    >
       <Tab.Container activeKey={activeTab} onSelect={handleSelect}>
-        <Nav variant="pills" className="mb-3 justify-content-between">
+        <Nav variant="pills" className="mb-5 justify-content-between w-50 tab-between">
           <Nav.Item>
             <Nav.Link eventKey="login">Login</Nav.Link>
           </Nav.Item>
@@ -23,7 +31,7 @@ function page() {
           </Nav.Item>
         </Nav>
 
-        <Tab.Content>
+        <Tab.Content className="w-50">
           <Tab.Pane eventKey="login">
             <div className="text-center mb-3">
               <p>Sign in with:</p>
@@ -129,7 +137,8 @@ function page() {
       </Tab.Container>
     </Container>
   );
-}
+};
 
 export default page;
+
 
