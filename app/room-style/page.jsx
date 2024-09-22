@@ -17,8 +17,6 @@ const Roomstyle = () => {
 
   const [rooms, setRooms] = useState([]);
 
-  console.log("mm",rooms);
-
   useEffect(() => {
     const fetchRooms = async () => {
         try {
