@@ -86,6 +86,12 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
+            <br/>
+            <div className="footer__area-widget">
+            <Link href="/admin/signup">
+              <h5>Elite Access</h5>
+            </Link>
+            </div>
           </div>
        
         </div>

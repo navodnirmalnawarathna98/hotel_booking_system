@@ -54,12 +54,27 @@ export async function POST(req) {
 }
 
 
-export async function GET() {
+export async function GET(req) {
   await connectDB();
 
+  const { searchParams } = new URL(req.url);
+  const roomId = searchParams.get('id'); 
+
   try {
-    const rooms = await Room.find({});
-    return NextResponse.json(rooms);
+    if (roomId) {
+      // Fetch the room by ID
+      const room = await Room.findById(roomId);
+
+      if (!room) {
+        return NextResponse.json({ message: 'Room not found' }, { status: 404 });
+      }
+
+      return NextResponse.json(room);
+    } else {
+      // Fetch all rooms if no ID is provided
+      const rooms = await Room.find({});
+      return NextResponse.json(rooms);
+    }
   } catch (error) {
     return NextResponse.json({ message: 'Error fetching rooms', error: error.message }, { status: 500 });
   }

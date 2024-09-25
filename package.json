@@ -39,6 +39,7 @@
     "react-modal-video": "^2.0.1",
     "react-responsive": "^9.0.2",
     "react-responsive-carousel": "^3.2.23",
+    "react-tag-input": "^6.10.3",
     "sass": "^1.79.2",
     "sass-loader": "^13.2.2",
     "simplebar": "^6.2.4",

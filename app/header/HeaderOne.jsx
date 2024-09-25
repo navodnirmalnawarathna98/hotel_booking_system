@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { Blog, Home, Page, Room } from "./Menu";
 import DropDown from "./DropDown";
+import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 
 export default function HeaderOne({ variant }) {
+    const [showModal, setShowModal] = useState(false);
     const [mobileToggle, setMobileToggle] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     useEffect(() => {
@@ -17,6 +19,9 @@ export default function HeaderOne({ variant }) {
         }
         });
     }, []);
+
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
 
     return (
         <div className={`header__sticky ${ variant ? variant : "" } ${isSticky ? "header__sticky-sticky-menu" : ""}`}>
@@ -50,13 +55,28 @@ export default function HeaderOne({ variant }) {
 						</div>
 					</div>
 					<div className="header__area-menubar-right-box">
-						<div className="header__area-menubar-right-box-btn">
-							<Link className="theme-btn" href="/contact">Book Now<i className="fal fa-long-arrow-right"></i></Link>
+						<div className="header__area-menubar-right-box-btn" onClick={handleShow}>
+							<Link  className="theme-btn" href="">My Booking<i className="fal fa-long-arrow-right"></i></Link>
 						</div>
 					</div>
                 </div>
             </div>
+
         </div>
+            {/* Modal for booking */}
+        <Modal show={showModal} onHide={handleClose} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Book Your Room</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          </Modal.Body>
+        </Modal>
         </div>
     );
 }
