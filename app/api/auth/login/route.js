@@ -7,7 +7,8 @@ import User from "@/models/User"; // User model
 export async function POST(req) {
   try {
     const { email, password } = await req.json(); // Extract email and password from the request body
-
+    console.log("Login request received");
+    console.log("email", email);
     // Connect to the database
     await dbConnect();
 

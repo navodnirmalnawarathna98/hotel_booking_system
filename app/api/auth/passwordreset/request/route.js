@@ -33,7 +33,7 @@ export async function POST(req) {
       },
     });
 
-    const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}`;
+    const resetLink = `${process.env.FRONTEND_URL}/?token=${resetToken}`;
 
     // Send the email with the reset link
     await transporter.sendMail({
@@ -44,7 +44,10 @@ export async function POST(req) {
     });
 
     return new Response(
-      JSON.stringify({ message: "Password reset email sent" }),
+      JSON.stringify({
+        message:
+          "Password reset email sent please check your email inbox and click the link to set the new password!..",
+      }),
       { status: 200 }
     );
   } catch (error) {
