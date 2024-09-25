@@ -3,8 +3,15 @@
 import "./signup.css";
 import React, { useState } from "react";
 import { Container, Tab, Nav, Button, Form, Row, Col } from "react-bootstrap";
-import { FaFacebookF, FaTwitter, FaGoogle, FaGithub } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaGoogle,
+  FaGithub,
+  FaHome,
+} from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 // Import the useRouter hook
 
 const Page = () => {
@@ -112,7 +119,7 @@ const Page = () => {
           </Nav.Item>
           <Nav.Item>
             <Link href="/">
-              <FaHome size={40}/>
+              <FaHome size={40} />
             </Link>
           </Nav.Item>
         </Nav>
@@ -151,6 +158,7 @@ const Page = () => {
                   value={loginFormData.email}
                   type="email"
                   placeholder="Enter email"
+                  autocomplete="off"
                 />
               </Form.Group>
 
@@ -162,6 +170,7 @@ const Page = () => {
                   value={loginFormData.password}
                   type="password"
                   placeholder="Password"
+                  autocomplete="off"
                 />
               </Form.Group>
 

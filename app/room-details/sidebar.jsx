@@ -3,8 +3,10 @@
 import { useState , useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
+  const router = useRouter(); // Initialize the router
   const [rooms, setRooms] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({
@@ -46,14 +48,17 @@ const Sidebar = () => {
     }));
   };
 
+
   // Submit form data to the API
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem('token');
     try {
       const response = await fetch("/api/booking", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(bookingDetails),
       });
@@ -70,7 +75,12 @@ const Sidebar = () => {
           checkOut: "",
           guestCount: "",
         });
-      } else {
+      }
+      if (response.status === 401){
+        alert("You must be logged in first: " );
+        router.push("/admin/signup");
+      }
+       else {
         alert("Error creating booking: " + data.message);
       }
     } catch (error) {
