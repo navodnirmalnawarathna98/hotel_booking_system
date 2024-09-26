@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dbConnect from "@/lib/connect-db"; // MongoDB connection
-import User from "@/models/User"; // User model
+import Admin from "@/models/Admin"; // User model
 
 // Handle password reset with the token
 export async function POST(req) {
@@ -19,7 +19,7 @@ export async function POST(req) {
     await dbConnect();
 
     // Find the user by ID
-    const user = await User.findById(decoded.userId);
+    const user = await Admin.findById(decoded.userId);
     if (!user) {
       return new Response(JSON.stringify({ message: "User not found" }), {
         status: 404,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -48,17 +48,40 @@ const Sidebar = () => {
     }));
   };
 
+  const handleSubmitForLogged = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    try {
+      const response = await fetch("/api/auth/login/checklogged", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 401) {
+        alert("You must be logged in first: ");
+        router.push("/admin/signup");
+      }
+      if (response.status === 200) {
+        handleShow();
+      }
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+    }
+  };
 
   // Submit form data to the API
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     try {
       const response = await fetch("/api/booking", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(bookingDetails),
       });
@@ -76,11 +99,10 @@ const Sidebar = () => {
           guestCount: "",
         });
       }
-      if (response.status === 401){
-        alert("You must be logged in first: " );
+      if (response.status === 401) {
+        alert("You must be logged in first: ");
         router.push("/admin/signup");
-      }
-       else {
+      } else {
         alert("Error creating booking: " + data.message);
       }
     } catch (error) {
@@ -102,12 +124,12 @@ const Sidebar = () => {
                 <i className="fal fa-users"></i>(6) Guest's
               </li>
             </ul>
-            <br/>
+            <br />
             {/* <h4>
               $219<span>/Night</span>
             </h4> */}
             {/* Trigger modal */}
-            <Button className="theme-btn" onClick={handleShow}>
+            <Button className="theme-btn" onClick={handleSubmitForLogged}>
               Book Now<i className="fal fa-long-arrow-right"></i>
             </Button>
           </div>
