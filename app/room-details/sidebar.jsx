@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from 'react-toastify'; // Import react-toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import styles for react-toastify
 
 const Sidebar = () => {
   const router = useRouter(); // Initialize the router
@@ -28,7 +30,7 @@ const Sidebar = () => {
         setRooms(data); // Store the fetched rooms in the state
       } catch (error) {
         console.error("Error fetching rooms:", error);
-        setError("Error fetching rooms. Please try again.");
+        toast.error("Error fetching rooms. Please try again.");
       }
     };
 
@@ -61,13 +63,15 @@ const Sidebar = () => {
       });
 
       if (response.status === 401) {
-        alert("You must be logged in first: ");
+        // alert("You must be logged in first: ");
+        toast.error("You must be logged in first.");
         router.push("/admin/signup");
       }
       if (response.status === 200) {
         handleShow();
       }
     } catch (error) {
+      toast.error("Error checking login status.");
       console.error("Error submitting booking:", error);
     }
   };
@@ -87,7 +91,7 @@ const Sidebar = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        alert("Booking successful");
+        toast.success("Booking successful");
         handleClose();
         // Clear form inputs by resetting formData to initial state
         setFormData({
@@ -100,12 +104,13 @@ const Sidebar = () => {
         });
       }
       if (response.status === 401) {
-        alert("You must be logged in first: ");
+        toast.error("You must be logged in first.");
         router.push("/admin/signup");
       } else {
-        alert("Error creating booking: " + data.message);
+        toast.error("Error creating booking: " + data.message);
       }
     } catch (error) {
+      toast.error("Error submitting booking.");
       console.error("Error submitting booking:", error);
     }
   };

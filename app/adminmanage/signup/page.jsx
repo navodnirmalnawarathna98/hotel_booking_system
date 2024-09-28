@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-// Import the useRouter hook
+import Swal from "sweetalert2"; 
 
 const Page = () => {
   // const [formData, setFormData] = useState({
@@ -82,17 +82,39 @@ const Page = () => {
         // If login is successful, store the token in localStorage
         if (data.token) {
           localStorage.setItem("token", data.token);
-          setMessage("Login successful!");
-          // Redirect to homepage
-          router.push("/adminmanage/dashboard"); // Redirect to the homepage (or any other route)
+          Swal.fire({
+            title: 'Success!',
+            text: data.message,
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            router.push("/adminmanage/dashboard");
+          });
+          
         } else {
-          setMessage("Login failed. No token received.");
+          Swal.fire({
+            title: 'Error!',
+            text: data.message || 'Login failed. No token received..',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
         }
       } else {
-        setMessage(data.message || "Login failed.");
+        Swal.fire({
+          title: 'Error!',
+          text: data.message || 'Login failed. No token received..',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+        // setMessage(data.message || "Login failed.");
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      Swal.fire({
+        title: 'Error!',
+        text: data.message || 'An error occurred. Please try again...',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       console.error("Login error:", error);
     }
   };

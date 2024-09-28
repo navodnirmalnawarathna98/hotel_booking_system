@@ -43,10 +43,12 @@
     "react-responsive": "^9.0.2",
     "react-responsive-carousel": "^3.2.23",
     "react-tag-input": "^6.10.3",
+    "react-toastify": "^10.0.5",
     "sass": "^1.79.2",
     "sass-loader": "^13.2.2",
     "simplebar": "^6.2.4",
     "simplebar-react": "^3.2.3",
+    "sweetalert2": "^11.14.1",
     "swiper": "^10.2.0",
     "uuid": "^9.0.0"
   }

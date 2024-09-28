@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Swal from "sweetalert2"; 
 // Import the useRouter hook
 
 const Page = () => {
@@ -54,14 +55,30 @@ const Page = () => {
       const data = await res.json(); // Parse the JSON response
 
       if (res.status === 201) {
-        setMessage(data.message); // Expected message from backend
+        Swal.fire({
+          title: 'Success!',
+          text: data.message,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          router.push("/room-style");
+        });
       } else {
-        setMessage(data.message || "Registration failed."); // Handle errors
+        Swal.fire({
+          title: 'Error!',
+          text: data.message || 'Registration failed.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      Swal.fire({
+        title: 'Error!',
+        text: 'An error occurred. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       console.error(error);
-      console.log(data);
     }
   };
 
@@ -79,20 +96,39 @@ const Page = () => {
       const data = await res.json(); // Parse the JSON response
 
       if (res.status === 200) {
-        // If login is successful, store the token in localStorage
         if (data.token) {
           localStorage.setItem("token", data.token);
-          setMessage("Login successful!");
-          // Redirect to homepage
-          router.push("/"); // Redirect to the homepage (or any other route)
+          Swal.fire({
+            title: 'Success!',
+            text: 'Login successful!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            router.push("/");
+          });
         } else {
-          setMessage("Login failed. No token received.");
+          Swal.fire({
+            title: 'Error!',
+            text: 'Login failed. No token received.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
         }
       } else {
-        setMessage(data.message || "Login failed.");
+        Swal.fire({
+          title: 'Error!',
+          text: data.message || 'Login failed.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      Swal.fire({
+        title: 'Error!',
+        text: 'An error occurred. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       console.error("Login error:", error);
     }
   };
