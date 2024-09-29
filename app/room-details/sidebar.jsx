@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from 'react-toastify'; // Import react-toastify
-import 'react-toastify/dist/ReactToastify.css'; // Import styles for react-toastify
-
+import { ToastContainer, toast } from "react-toastify"; // Import react-toastify
+import "react-toastify/dist/ReactToastify.css"; // Import styles for react-toastify
+import Swal from "sweetalert2";
 const Sidebar = () => {
   const router = useRouter(); // Initialize the router
   const [rooms, setRooms] = useState([]);
@@ -64,8 +64,16 @@ const Sidebar = () => {
 
       if (response.status === 401) {
         // alert("You must be logged in first: ");
-        toast.error("You must be logged in first.");
-        router.push("/admin/signup");
+        // toast.error("You must be logged in first.");
+        Swal.fire({
+          title: "You must login first!",
+
+          icon: "error",
+          confirmButtonText: "OK",
+        }).then(() => {
+          router.push("/admin/signup");
+        });
+        // router.push("/admin/signup");
       }
       if (response.status === 200) {
         handleShow();
@@ -90,11 +98,17 @@ const Sidebar = () => {
         body: JSON.stringify(bookingDetails),
       });
       const data = await response.json();
-      if (response.ok) {
+      if (response.status === 200) {
         toast.success("Booking successful");
+        Swal.fire({
+          title: "Booking successful!",
+
+          icon: "success",
+          confirmButtonText: "OK",
+        });
         handleClose();
         // Clear form inputs by resetting formData to initial state
-        setFormData({
+        setBookingDetails({
           roomNumber: "",
           roomType: "",
           userId: "",
@@ -111,6 +125,12 @@ const Sidebar = () => {
       }
     } catch (error) {
       toast.error("Error submitting booking.");
+      Swal.fire({
+        title: "Error!",
+
+        icon: "error",
+        confirmButtonText: "OK",
+      });
       console.error("Error submitting booking:", error);
     }
   };
@@ -182,7 +202,7 @@ const Sidebar = () => {
                   ))}
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3">
+              {/* <Form.Group className="mb-3">
                 <Form.Label>User ID</Form.Label>
                 <Form.Control
                   type="text"
@@ -192,7 +212,7 @@ const Sidebar = () => {
                   placeholder="Enter user ID"
                   required
                 />
-              </Form.Group>
+              </Form.Group> */}
               <Form.Group className="mb-3">
                 <Form.Label>User Contact No</Form.Label>
                 <Form.Control

@@ -6,6 +6,7 @@ import DropDown from "./DropDown";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 export default function HeaderOne({ variant }) {
   const router = useRouter(); // Initialize the router
@@ -39,12 +40,21 @@ export default function HeaderOne({ variant }) {
       });
       const data = await response.json();
       if (response.status === 200) {
-        //alert("Booking info retrieved  successful" + data);
+        // alert("Booking info retrieved  successful" + data);
+
         handleShow();
       }
       if (response.status === 401) {
-        alert("You must be logged in first: ");
-        router.push("/admin/signup");
+        //alert("You must be logged in first: ");
+        Swal.fire({
+          title: "You must login first!",
+          text: data.message,
+          icon: "error",
+          confirmButtonText: "OK",
+        }).then(() => {
+          router.push("/admin/signup");
+        });
+        // router.push("/admin/signup");
       }
     } catch (error) {
       console.error("Error fetching bookings:", error);
