@@ -6,6 +6,7 @@ import DropDown from "./DropDown";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 export default function HeaderOne({ variant }) {
   const router = useRouter(); // Initialize the router
@@ -39,12 +40,23 @@ export default function HeaderOne({ variant }) {
       });
       const data = await response.json();
       if (response.status === 200) {
-        //alert("Booking info retrieved  successful" + data);
+        Swal.fire({
+          title: "Success!",
+          text: "Booking info retrieved  successful",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
         handleShow();
       }
       if (response.status === 401) {
-        alert("You must be logged in first: ");
-        router.push("/admin/signup");
+        Swal.fire({
+          title: "Oops...",
+          text: "You must be logged in first 🔒. After clicking the OK button ✅, you will be redirected to the Sign Up page 📝.",
+          icon: "info",
+          confirmButtonText: "OK",
+        }).then(() => {
+          router.push("/admin/signup");
+        });
       }
     } catch (error) {
       console.error("Error fetching bookings:", error);
@@ -104,22 +116,17 @@ export default function HeaderOne({ variant }) {
                   <li>
                     <Link href="/contact">Contact</Link>
                   </li>
+                  <li>
+                    <Link href="#" onClick={handleSubmit}>
+                      My Booking
+                    </Link>
+                  </li>
+                  <li>
+                  <Link href="/admin/signup">Sign In</Link>
+                  </li>
                 </ul>
               </div>
             </div>
-            <div className="header__area-menubar-right-box">
-              <div
-                className="header__area-menubar-right-box-btn"
-                onClick={handleSubmit}
-              >
-                <Link className="theme-btn" href="">
-                  My Booking<i className="fal fa-long-arrow-right"></i>
-                </Link>
-              </div>
-            </div>
-            <Button>
-              <Link href="/admin/signup">Login/Sign Up</Link>
-            </Button>
           </div>
         </div>
       </div>

@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from 'react-toastify'; // Import react-toastify
-import 'react-toastify/dist/ReactToastify.css'; // Import styles for react-toastify
+import Swal from "sweetalert2";
 
 const Sidebar = () => {
   const router = useRouter(); // Initialize the router
@@ -63,15 +62,21 @@ const Sidebar = () => {
       });
 
       if (response.status === 401) {
-        // alert("You must be logged in first: ");
-        toast.error("You must be logged in first.");
-        router.push("/admin/signup");
+        
+        Swal.fire({
+          title: 'Oops...',
+          text: 'You must be logged in first 🔒. After clicking the OK button ✅, you will be redirected to the Sign Up page 📝.',
+          icon: 'info',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          router.push("/admin/signup");
+        });
+        
       }
       if (response.status === 200) {
         handleShow();
       }
     } catch (error) {
-      toast.error("Error checking login status.");
       console.error("Error submitting booking:", error);
     }
   };
@@ -91,7 +96,12 @@ const Sidebar = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        toast.success("Booking successful");
+        Swal.fire({
+          title: 'Success!',
+          text: 'Booking successful',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
         handleClose();
         // Clear form inputs by resetting formData to initial state
         setFormData({
@@ -104,8 +114,14 @@ const Sidebar = () => {
         });
       }
       if (response.status === 401) {
-        toast.error("You must be logged in first.");
-        router.push("/admin/signup");
+        Swal.fire({
+          title: 'Error!',
+          text: 'You must be logged in first.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          router.push("/admin/signup");
+        });
       } else {
         toast.error("Error creating booking: " + data.message);
       }
