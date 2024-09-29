@@ -33,7 +33,7 @@ export async function POST(req) {
       },
     });
 
-    const resetLink = `${process.env.FRONTEND_URL}/?token=${resetToken}`;
+    const resetLink = `${process.env.ADMIN_FRONTEND_URL}/?token=${resetToken}`;
 
     // Send the email with the reset link
     await transporter.sendMail({

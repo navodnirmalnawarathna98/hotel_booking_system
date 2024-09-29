@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 
 const Page = () => {
   // const [formData, setFormData] = useState({
@@ -83,37 +83,36 @@ const Page = () => {
         if (data.token) {
           localStorage.setItem("token", data.token);
           Swal.fire({
-            title: 'Success!',
+            title: "Success!",
             text: data.message,
-            icon: 'success',
-            confirmButtonText: 'OK'
+            icon: "success",
+            confirmButtonText: "OK",
           }).then(() => {
             router.push("/adminmanage/dashboard");
           });
-          
         } else {
           Swal.fire({
-            title: 'Error!',
-            text: data.message || 'Login failed. No token received..',
-            icon: 'error',
-            confirmButtonText: 'OK'
+            title: "Error!",
+            text: data.message || "Login failed. No token received..",
+            icon: "error",
+            confirmButtonText: "OK",
           });
         }
       } else {
         Swal.fire({
-          title: 'Error!',
-          text: data.message || 'Login failed. No token received..',
-          icon: 'error',
-          confirmButtonText: 'OK'
+          title: "Error!",
+          text: data.message || "Login failed. No token received..",
+          icon: "error",
+          confirmButtonText: "OK",
         });
         // setMessage(data.message || "Login failed.");
       }
     } catch (error) {
       Swal.fire({
-        title: 'Error!',
-        text: data.message || 'An error occurred. Please try again...',
-        icon: 'error',
-        confirmButtonText: 'OK'
+        title: "Error!",
+        text: data.message || "An error occurred. Please try again...",
+        icon: "error",
+        confirmButtonText: "OK",
       });
       console.error("Login error:", error);
     }
@@ -172,6 +171,14 @@ const Page = () => {
                   autocomplete="off"
                 />
               </Form.Group>
+
+              <Row className="mb-4">
+                <Col xs={6} className="text-end">
+                  <a href="/adminmanage/forgotpassword/request">
+                    Forgot password?
+                  </a>
+                </Col>
+              </Row>
 
               <Button type="submit" variant="primary" className="w-100 mb-4">
                 Sign in

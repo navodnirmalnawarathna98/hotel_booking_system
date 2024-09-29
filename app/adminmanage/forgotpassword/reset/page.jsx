@@ -36,7 +36,7 @@ const Page = () => {
     setErrorMessage("");
 
     try {
-      const res = await fetch("/api/auth/passwordreset/reset", {
+      const res = await fetch("/api/adminauth/passwordreset/reset", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, newPassword }),
@@ -48,7 +48,7 @@ const Page = () => {
       }
       if (res.status === 200) {
         setMessage(data.message);
-        router.push("/admin/signup"); // Redirect to
+        router.push("/adminmanage/signup"); // Redirect to
       } else {
         setMessage(
           data.message || "Password reset failed try again in shortly"

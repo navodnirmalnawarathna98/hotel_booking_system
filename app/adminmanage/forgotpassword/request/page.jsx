@@ -23,7 +23,7 @@ const Page = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/auth/passwordreset/request", {
+      const res = await fetch("/api/adminauth/passwordreset/request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
